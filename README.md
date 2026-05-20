@@ -1,111 +1,155 @@
 # 📦 Inventory Management System
 
-A simple console-based Java application to manage product inventory. Add products, view stock, search items, and record sales — all from the terminal.
+A simple console-based Java application for managing product inventory. Users can add products, view available stock, search products, and reduce stock when sales occur.
 
 ---
 
 ## 🚀 Features
 
 | Feature | Status |
-|---|---|
-| Add products with quantity | ✅ Done |
-| View current stock | ✅ Done |
-| Reduce stock (sale) | 🔧 In Progress |
-| Search product by name | 🔧 In Progress |
+|----------|----------|
+| Add Products | ✅ Completed |
+| View Stock | ✅ Completed |
+| Search Product by Name | ✅ Completed |
+| Reduce Stock (Sale) | ✅ Completed |
+| Inventory Full Check | ✅ Completed |
+| Product Not Found Handling | ✅ Completed |
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Language:** Java (JDK 8+)
-- **Type:** Console / Terminal Application
-- **Input:** `Scanner` (stdin)
+- Language: Java
+- JDK Version: 8+
+- Type: Console-Based Application
+- Input Handling: Scanner Class
 
 ---
 
 ## 📂 Project Structure
 
-```
+```text
 Inventory/
 │
-└── Inventory.java      # Main file containing all logic
+└── Inventory.java
 ```
 
 ---
 
 ## ▶️ How to Run
 
-### Prerequisites
-- Java JDK 8 or higher installed
-- Terminal / Command Prompt
+### 1. Clone Repository
 
-### Steps
-
-**1. Clone the repository**
 ```bash
-git clone https://github.com/Kanhaiya209/inventory-management.git
-cd inventory-management
+git clone https://github.com/kanhaiya209/inventory-system.git
+cd inventory-system
 ```
 
-**2. Compile**
+### 2. Compile Program
+
 ```bash
 javac Inventory.java
 ```
 
-**3. Run**
+### 3. Run Program
+
 ```bash
 java Inventory
 ```
 
 ---
 
-## 💻 Usage
+## 💻 Menu Options
 
-On launch, enter the number of products you want to manage. A menu then appears in a loop:
-
-```
-Enter How Many Products to be added: 3
+```text
+===== Inventory Menu =====
 
 1. View Stock
 2. Add Stock
-3. Reduce Stock (Sale)
+3. Reduce Stock
 4. Search Product
 5. Exit
 ```
 
-### Typical flow
-1. Select **2 → Add Stock** to enter product names and quantities.
-2. Select **1 → View Stock** to display the inventory list.
-3. Select **5** to exit.
+### Add Product
+
+```text
+Enter Product Name: Rice
+Enter Quantity: 50
+Product Added Successfully.
+```
+
+### View Stock
+
+```text
+----- Inventory Stock -----
+
+1. Product: Rice | Quantity: 50
+2. Product: Sugar | Quantity: 30
+```
+
+### Search Product
+
+```text
+Enter Product Name to Search: Rice
+
+Product Found
+Product Name : Rice
+Quantity     : 50
+```
+
+### Reduce Stock
+
+```text
+Enter Product Name to Reduce: Rice
+Enter Quantity to Reduce: 10
+
+Stock Reduced Successfully.
+Remaining Quantity: 40
+```
 
 ---
 
-## ⚠️ Known Bugs
+## ⚙️ Current Limitations
 
-- **Off-by-one in `viewStock()`** — loop starts at index `1` instead of `0`, skipping the first product and throwing `ArrayIndexOutOfBoundsException` on the last entry.
-- **Scanner newline issue** — `sc.nextInt()` leaves a newline in the buffer, causing `sc.nextLine()` for product names to be skipped. Fix: add `sc.nextLine()` after each `nextInt()` call.
-- **Fixed array size** — product count is set once at startup and cannot be changed later.
+- Uses fixed-size arrays for storing products.
+- Maximum inventory size is decided when the program starts.
+- Data is not saved permanently after program exit.
 
 ---
 
-## 🔮 Planned Improvements
+## 🔮 Future Improvements
 
-- [ ] Fix off-by-one bug in `viewStock()`
-- [ ] Fix `Scanner` newline flushing issue
-- [ ] Implement `searchStock()` by product name
-- [ ] Implement `reduceStock()` for recording sales
-- [ ] Switch from arrays to `ArrayList` for dynamic resizing
-- [ ] Add input validation to prevent crashes on bad input
+- [ ] Replace arrays with ArrayList
+- [ ] Add Update Product feature
+- [ ] Add Delete Product feature
+- [ ] Store data in a file/database
+- [ ] Add Low Stock Alert
+- [ ] Generate Inventory Reports
+- [ ] Build GUI using Java Swing/JavaFX
+
+---
+
+## 📚 Concepts Used
+
+- Arrays
+- Loops
+- Methods
+- Conditional Statements
+- Linear Search
+- Scanner Class
+- Java Basics
 
 ---
 
 ## 👨‍💻 Author
 
-**Kanhaiya** — [@Kanhaiya209](https://github.com/Kanhaiya209)
-BCA (H/R), Batch 2024–28
+Kanhaiya
+
+GitHub: https://github.com/kanhaiya209
 
 ---
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open-source and available under the MIT License.
